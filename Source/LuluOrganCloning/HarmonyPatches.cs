@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using System.Reflection;
 using Verse;
 
 namespace Cerespirin.OrganCloning
@@ -10,14 +9,15 @@ namespace Cerespirin.OrganCloning
 	{
 		static HarmonyPatches()
 		{
-			Harmony harmony = new Harmony("rimworld.loonyladle.organcloning");
-
-			MethodInfo method1 = AccessTools.Method(typeof(PawnUtility), "TrySpawnHatchedOrBornPawn");
-			HarmonyMethod patch1 = new HarmonyMethod(typeof(HarmonyPatches), nameof(AddClonedOrgans));
-			harmony.Patch(method1, null, patch1);
+			Harmony harmony = new Harmony("rimworld.cerespirin.organcloning");
+			harmony.PatchAll();
 		}
+	}
 
-		public static void AddClonedOrgans(Pawn pawn, Thing motherOrEgg)
+	[HarmonyPatch(typeof(PawnUtility), nameof(PawnUtility.TrySpawnHatchedOrBornPawn))]
+	public static class HarmonyPatch_PawnUtility_TrySpawnHatchedOrBornPawn
+	{
+		public static void Postfix(Pawn pawn, Thing motherOrEgg)
 		{
 			if (motherOrEgg is Pawn mother)
 			{

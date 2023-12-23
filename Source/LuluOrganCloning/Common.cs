@@ -7,7 +7,9 @@ namespace Cerespirin.OrganCloning
 	[DefOf]
 	public static class MyDefOf
 	{
-		public static HediffDef LuluOrganCloning_ClonedOrgan;
+		static MyDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(MyDefOf));
+
+		public static HediffDef OrganCloning_ClonedOrgan;
 	}
 
 	public static class CloningRecipesUtility
@@ -28,7 +30,7 @@ namespace Cerespirin.OrganCloning
 				if (hediff.Part == part)
 				{
 					// ... if it is cloned, set our return flag...
-					if (hediff.def == MyDefOf.LuluOrganCloning_ClonedOrgan)
+					if (hediff.def == MyDefOf.OrganCloning_ClonedOrgan)
 					{
 						isCloned = true;
 					}

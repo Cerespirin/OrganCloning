@@ -15,7 +15,7 @@ namespace Cerespirin.OrganCloning
 
 				foreach (BodyPartRecord part in organProps.organsToClone)
 				{
-					Hediff hediff = HediffMaker.MakeHediff(MyDefOf.LuluOrganCloning_ClonedOrgan, pawn, part);
+					Hediff hediff = HediffMaker.MakeHediff(MyDefOf.OrganCloning_ClonedOrgan, pawn, part);
 					pawn.health.AddHediff(hediff);
 				}
 			}

@@ -1,17 +1,7 @@
-﻿using RimWorld;
-using System.Linq;
-using Verse;
+﻿using Verse;
 
 namespace Cerespirin.OrganCloning
 {
-	[DefOf]
-	public static class MyDefOf
-	{
-		static MyDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(MyDefOf));
-
-		public static HediffDef OrganCloning_ClonedOrgan;
-	}
-
 	public static class CloningRecipesUtility
 	{
 		public static bool IsCleanAndCloned(Pawn pawn, BodyPartRecord part)

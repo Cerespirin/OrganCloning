@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using RimWorld;
 using System.Reflection;
 using Verse;
@@ -12,7 +12,7 @@ namespace LoonyLadle.OrganCloning
     {
         static HarmonyPatches()
         {
-            HarmonyInstance harmony = HarmonyInstance.Create("rimworld.loonyladle.organcloning");
+            Harmony harmony = new Harmony("rimworld.loonyladle.organcloning");
 
             MethodInfo method1 = AccessTools.Method(typeof(PawnUtility), "TrySpawnHatchedOrBornPawn");
             HarmonyMethod patch1 = new HarmonyMethod(typeof(HarmonyPatches), nameof(AddClonedOrgans));

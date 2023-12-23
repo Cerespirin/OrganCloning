@@ -4,16 +4,6 @@ using Verse;
 
 namespace Cerespirin.OrganCloning
 {
-	[StaticConstructorOnStartup]
-	static class HarmonyPatches
-	{
-		static HarmonyPatches()
-		{
-			Harmony harmony = new Harmony("rimworld.cerespirin.organcloning");
-			harmony.PatchAll();
-		}
-	}
-
 	[HarmonyPatch(typeof(PawnUtility), nameof(PawnUtility.TrySpawnHatchedOrBornPawn))]
 	public static class HarmonyPatch_PawnUtility_TrySpawnHatchedOrBornPawn
 	{

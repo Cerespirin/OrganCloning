@@ -2,10 +2,10 @@
 <Patch>
 
 	<Operation Class="PatchOperationAdd">
-    <xpath>Defs/HediffDef[defName="Pregnant"]/comps</xpath>
-    <value>
-      <li Class="LoonyLadle.OrganCloning.HediffCompProperties_OrganProps"/>
-    </value>
+		<xpath>Defs/HediffDef[defName="Pregnant"]/comps</xpath>
+		<value>
+			<li Class="LoonyLadle.OrganCloning.HediffCompProperties_OrganProps"/>
+		</value>
 	</Operation>
-  
+	
 </Patch>

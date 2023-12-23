@@ -3,9 +3,7 @@ using RimWorld;
 using System.Reflection;
 using Verse;
 
-#pragma warning disable IDE1006 // Naming Styles
-
-namespace LoonyLadle.OrganCloning
+namespace Cerespirin.OrganCloning
 {
 	[StaticConstructorOnStartup]
 	static class HarmonyPatches

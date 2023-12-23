@@ -2,9 +2,7 @@
 using System.Text;
 using Verse;
 
-#pragma warning disable IDE1006 // Naming Styles
-
-namespace LoonyLadle.OrganCloning
+namespace Cerespirin.OrganCloning
 {
 	public class HediffCompProperties_OrganProps : HediffCompProperties
 	{

@@ -7,11 +7,12 @@
     <ProjectGuid>{95548EAE-B2AA-4EE1-9D6B-ED52E5D7D6C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LoonyLadle.OrganCloning</RootNamespace>
-    <AssemblyName>LuluOrganCloning</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>Cerespirin.OrganCloning</RootNamespace>
+    <AssemblyName>OrganCloning</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,10 +31,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\..\Users\Sky\Documents\_My Actual Documents\RimWorld Modding\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\HarmonyRimWorld\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -46,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common.cs" />
-    <Compile Include="HarmonyPatches.cs" />
+    <Compile Include="CloningRecipesUtility.cs" />
+    <Compile Include="MyDefOf.cs" />
+    <Compile Include="MyStaticConstructor.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch_PawnUtility_TrySpawnHatchedOrBornPawn.cs" />
     <Compile Include="HediffComp_OrganProps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe_PrepareClonedOrgan.cs" />
